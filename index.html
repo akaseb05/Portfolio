@@ -1,58 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <title>Ahmad Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmad Kaseb | Portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-                <span>Ahmad</span>
-            </div>
-            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-container">
+      <a class="logo" href="#home" data-aos="zoom-in" data-aos-duration="900">
+        <span>Ahmad Kaseb</span>
+      </a>
+
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#certs">Certifications</a>
+        <a href="#honors">Honors</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="contact-btn">
+        <a href="#contact">Let’s Talk</a>
+      </div>
+
+      <button class="hamburg" onclick="hamburg()" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- MOBILE DROPDOWN -->
+    <div class="dropdown" aria-hidden="true">
+      <button class="cancel" onclick="cancel()" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="dropdown-links">
+        <a href="#about" onclick="cancel()">About</a>
+        <a href="#education" onclick="cancel()">Education</a>
+        <a href="#experience" onclick="cancel()">Experience</a>
+        <a href="#projects" onclick="cancel()">Projects</a>
+        <a href="#skills" onclick="cancel()">Skills</a>
+        <a href="#certs" onclick="cancel()">Certifications</a>
+        <a href="#honors" onclick="cancel()">Honors</a>
+        <a href="#contact" onclick="cancel()">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero section">
+    <div class="main-container">
+      <div class="image" data-aos="zoom-in-right" data-aos-duration="1100">
+        <!-- Keep main.png OR replace it -->
+        <img src="main.png" alt="Ahmad Kaseb" />
+      </div>
+
+      <div class="content">
+        <h1 data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+          Hey, I’m <span>Ahmad Kaseb</span>
+        </h1>
+
+        <div class="typewriter" data-aos="fade-right" data-aos-duration="900" data-aos-delay="250">
+          I’m a <span></span>
         </div>
-        <div class="dropdown">
+
+        <p data-aos="flip-up" data-aos-duration="900" data-aos-delay="350">
+          Computer Science student at the University of Houston (Minor in Mathematics) focused on building clean software,
+          learning cybersecurity through hands-on labs, and applying tech to real-world problems.
+        </p>
+
+        <div class="social-links" data-aos="flip-down" data-aos-duration="850" data-aos-delay="450">
+          <!-- Add your real GitHub link when ready -->
+          <a href="#" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+
+          <a href="https://www.linkedin.com/in/Ahmad-Kaseb" target="_blank" rel="noreferrer"
+             aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+
+          <a href="mailto:akaseb@cougarnet.uh.edu" aria-label="Email" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+          <a href="tel:+17138352579" aria-label="Phone" title="Phone">
+            <i class="fa-solid fa-phone"></i>
+          </a>
         </div>
-    </nav>
-        <section>
-            <div class="main-container">
-                <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
-                    <img src="main.png" alt="">
-                </div>
-                <div class="content">
-                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Ahmad</span></h1>
-                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
-                    <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, perferendis quas consectetur possimus maxime consequatur cupiditate eos dolorum molestias praesentium error exercitationem rem labore illo, in dolor, odio corporis excepturi?</p>
-                    <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
-                        <a href="#" ><i class="fa-brands fa-github"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
-                    <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
-                        <button>Download CV</button>
-                    </div>
-                </div>
+
+        <div class="btn-row" data-aos="zoom-out-left" data-aos-duration="850" data-aos-delay="550">
+          <a class="btn primary" href="#projects">View Projects</a>
+
+          <!-- OPTIONAL: Upload your resume PDF to the repo and rename it to Ahmad_Kaseb_Resume.pdf -->
+          <a class="btn outline" href="Ahmad_Kaseb_Resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up" data-aos-duration="850">
+        <h2>About</h2>
+        <p>Quick overview of who I am and what I’m focused on.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card" data-aos="fade-right" data-aos-duration="850">
+          <h3>Bio</h3>
+          <p>
+            I’m a Computer Science student at the University of Houston with a strong interest in cybersecurity,
+            backend development, and building reliable systems. I like projects that are practical, clean, and
+            easy to maintain.
+          </p>
+
+          <div class="mini-list">
+            <div><span>School:</span> University of Houston</div>
+            <div><span>Major:</span> B.S. Computer Science</div>
+            <div><span>Minor:</span> Mathematics</div>
+            <div><span>Email:</span> akaseb@cougarnet.uh.edu</div>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-left" data-aos-duration="850">
+          <h3>Highlights</h3>
+          <ul class="bullets">
+            <li>ISC2 Certified in Cybersecurity (CC).</li>
+            <li>Completed CodePath Cybersecurity (CYB 101/102) with Azure lab simulations.</li>
+            <li>Dell GenAI Foundations program + certification.</li>
+            <li>Excel with Dell mentorship/fellowship (Data Analyst role).</li>
+            <li>Eagle Scout (Boy Scouts of America).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up" data-aos-duration="850">
+        <h2>Education</h2>
+        <p>Academic background and relevant coursework.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item" data-aos="fade-up" data-aos-duration="850">
+          <div class="tl-dot"></div>
+          <div class="tl-content card">
+            <div class="tl-top">
+              <h3>University of Houston — B.S. Computer Science</h3>
+              <span class="tag">Anticipated 2026</span>
             </div>
-        </section>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-          AOS.init({offset:0});
-        </script>
-        <script>
-            function hamburg(){
-                const navbar = document.querySelector(".dropdown")
-                navbar.style.transform = "translateY(0px)"
-            }
-            function cancel(){
-                const navbar = document.querySelector(".dropdown")
-                navbar.style.transform = "translateY(-500px)"
-            }
-        </script>
+            <p>Minor in Mathematics • GPA: 3.6</p>
+            <p class="muted">
+              Relevant coursework: Data Structures & Algorithms, Operating Systems, Database Systems,
+              Computer Organization & Architecture
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up" data-aos-duration="850">
+        <h2>Experience</h2>
+        <p>Programs, roles, and hands-on work.</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="tl-item" data-aos="fade-up" data-aos-duration="850">
+          <div class="tl-dot"></div>
+          <div class="tl-content card">
+            <div class="tl-top">
+              <h3>ColorStack — Fellow Mentor</h3>
+              <span class="tag">Oct 2025 – Present</span>
+            </div>
+            <ul class="bullets">
+              <li>Mentor undergraduate CS students through career and academic guidance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-aos="fade-up" data-aos-duration="850" data-aos-delay="80">
+          <div class="tl-dot"></div>
+          <div class="tl-content card">
+            <div class="tl-top">
+              <h3>Dell Technologies — GenAI Foundations Program</h3>
+              <span class="tag">Aug 2025 – Sep 2025</span>
+            </div>
+            <ul class="bullets">
+              <li>Built practical knowledge of applying generative AI to business operations and real-world problems.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-aos="fade-up" data-aos-duration="850" data-aos-delay="160">
+          <div class="tl-dot"></div>
+          <div class="tl-content card">
+            <div class="tl-top">
+              <h3>SEO (Sponsors for Educational Opportunity) — SEO Tech Developer Intern</h3>
+              <span class="tag">Jun 2025 – Aug 2025</span>
+            </div>
+            <ul class="bullets">
+              <li>Completed intensive full-stack coursework through real-world projects.</li>
+              <li>Selected for a competitive tech program focused on development + career preparation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-aos="fade-up" data-aos-duration="850" data-aos-delay="240">
+          <div class="tl-dot"></div>
+          <div class="tl-content card">
+            <div class="tl-top">
+              <h3>Dell Technologies — Excel with Dell Mentorship/Fellowship (Data Analyst)</h3>
+              <span class="tag">Feb 2025 – May 2025</span>
+            </div>
+            <ul class="bullets">
+              <li>Data Analyst for FusionTech Systems case competition, delivering insights to drive strategy.</li>
+              <li>Strengthened corporate communication + career readiness skills through mentorship.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-aos="fade-up" data-aos-duration="850" data-aos-delay="320">
+          <div class="tl-dot"></div>
+          <div class="tl-content card">
+            <div class="tl-top">
+              <h3>CodePath — Cybersecurity (CYB 101 & CYB 102)</h3>
+              <span class="tag">Aug 2024 – May 2025</span>
+            </div>
+            <ul class="bullets">
+              <li>Ran Azure lab threat simulations focused on malware + social engineering.</li>
+              <li>Hands-on work with vulnerability assessment and threat detection concepts.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-aos="fade-up" data-aos-duration="850" data-aos-delay="400">
+          <div class="tl-dot"></div>
+          <div class="tl-content card">
+            <div class="tl-top">
+              <h3>FTC Robotics — Assistant Coach</h3>
+              <span class="tag">Aug 2024 – Feb 2025</span>
+            </div>
+            <ul class="bullets">
+              <li>Assisted programming robots using Java for a state-ranked robotics team.</li>
+              <li>Helped students convert block code to Java to improve efficiency.</li>
+              <li>Troubleshot and optimized robot performance for competitions.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-aos="fade-up" data-aos-duration="850" data-aos-delay="480">
+          <div class="tl-dot"></div>
+          <div class="tl-content card">
+            <div class="tl-top">
+              <h3>Pyramids Pharmacy — Pharmacy Assistant</h3>
+              <span class="tag">Jan 2022 – Present</span>
+            </div>
+            <ul class="bullets">
+              <li>Tracked delivery statuses in Excel to improve medication tracking accuracy.</li>
+              <li>Managed insurance verification to minimize delays.</li>
+              <li>Created PowerPoint training materials to improve onboarding.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up" data-aos-duration="850">
+        <h2>Projects</h2>
+        <p>Real work I’ve built (with room to add more).</p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card project" data-aos="fade-up" data-aos-duration="850">
+          <div class="project-top">
+            <h3>UserManagerAPI</h3>
+            <span class="tag">C# • ASP.NET Core • .NET 6</span>
+          </div>
+          <p>RESTful Web API for user management with in-memory storage.</p>
+          <ul class="bullets">
+            <li>Implemented full CRUD endpoints.</li>
+            <li>Built custom middleware: logging, error handling, API key auth.</li>
+            <li>Designed for clean structure and maintainability.</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" class="btn small outline"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" class="btn small primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+          </div>
+        </article>
+
+        <article class="card project" data-aos="fade-up" data-aos-duration="850" data-aos-delay="100">
+          <div class="project-top">
+            <h3>Online Library Management System</h3>
+            <span class="tag">C++ • OOP</span>
+          </div>
+          <p>Library system for managing books, students, and rewards.</p>
+          <ul class="bullets">
+            <li>Object-oriented design for clearer, maintainable code.</li>
+            <li>Built core features to manage records and basic workflows.</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" class="btn small outline"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" class="btn small primary"><i class="fa-solid fa-file"></i> Details</a>
+          </div>
+        </article>
+
+        <article class="card project" data-aos="fade-up" data-aos-duration="850" data-aos-delay="200">
+          <div class="project-top">
+            <h3>Next Project (Add Yours)</h3>
+            <span class="tag">Your Stack</span>
+          </div>
+          <p>Placeholder card — add a project you’re proud of.</p>
+          <ul class="bullets">
+            <li>What it does</li>
+            <li>Why it matters</li>
+            <li>What tools you used</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" class="btn small outline"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" class="btn small primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up" data-aos-duration="850">
+        <h2>Skills</h2>
+        <p>Languages, tools, and platforms I work with.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card" data-aos="fade-right" data-aos-duration="850">
+          <h3>Languages & Dev</h3>
+          <div class="pill-wrap">
+            <span class="pill">Python</span>
+            <span class="pill">C++</span>
+            <span class="pill">Java</span>
+            <span class="pill">C#</span>
+            <span class="pill">SQL</span>
+            <span class="pill">C</span>
+            <span class="pill">HTML</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">ASP.NET Core</span>
+            <span class="pill">Git/GitHub</span>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-left" data-aos-duration="850">
+          <h3>Cyber & Tools</h3>
+          <div class="pill-wrap">
+            <span class="pill">Azure Labs</span>
+            <span class="pill">Linux</span>
+            <span class="pill">Wireshark</span>
+            <span class="pill">Splunk</span>
+            <span class="pill">PowerShell</span>
+            <span class="pill">CyberChef</span>
+            <span class="pill">John the Ripper</span>
+            <span class="pill">Metasploit</span>
+            <span class="pill">Packet Tracer</span>
+            <span class="pill">Excel</span>
+            <span class="pill">PowerPoint</span>
+            <span class="pill">Google Workspace</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs" class="section section-alt">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up" data-aos-duration="850">
+        <h2>Licenses & Certifications</h2>
+        <p>Credentials and completed programs.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card" data-aos="fade-up" data-aos-duration="850">
+          <h3>ISC2 — Certified in Cybersecurity (CC)</h3>
+          <p class="muted">Aug 2025 – Aug 2028</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-duration="850" data-aos-delay="100">
+          <h3>Dell — GenAI Foundations Certification</h3>
+          <p class="muted">Sep 2025</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-duration="850" data-aos-delay="200">
+          <h3>Google — Cybersecurity Certificate</h3>
+          <p class="muted">Jun 2025</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-duration="850">
+          <h3>Microsoft — Back-End Development with .NET</h3>
+          <p class="muted">May 2025</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-duration="850" data-aos-delay="100">
+          <h3>Cisco Networking Academy</h3>
+          <p class="muted">Networking Basics • Intro to Packet Tracer • Intro to Cybersecurity (Nov 2024)</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-duration="850" data-aos-delay="200">
+          <h3>Placeholder (Add More)</h3>
+          <p class="muted">Add future certs here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONORS -->
+  <section id="honors" class="section">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up" data-aos-duration="850">
+        <h2>Honors & Awards</h2>
+        <p>Achievements that matter.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card" data-aos="fade-right" data-aos-duration="850">
+          <h3>Eagle Scout</h3>
+          <p class="muted">Boy Scouts of America • Feb 2023</p>
+          <p>
+            Achieved the Eagle Scout rank, demonstrating long-term dedication, leadership, and perseverance.
+          </p>
+        </div>
+
+        <div class="card" data-aos="fade-left" data-aos-duration="850">
+          <h3>Next Award (Optional)</h3>
+          <p class="muted">Add scholarships, dean’s list, competitions, etc.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up" data-aos-duration="850">
+        <h2>Contact</h2>
+        <p>If you want to reach me, this is the fastest way.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card" data-aos="fade-right" data-aos-duration="850">
+          <h3>Reach me</h3>
+          <div class="contact-list">
+            <a href="mailto:akaseb@cougarnet.uh.edu"><i class="fa-solid fa-envelope"></i> akaseb@cougarnet.uh.edu</a>
+            <a href="tel:+17138352579"><i class="fa-solid fa-phone"></i> (713) 835-2579</a>
+            <a href="https://www.linkedin.com/in/Ahmad-Kaseb" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="#" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub (add link)</a>
+          </div>
+
+          <p class="muted">
+            If you don’t want the form, delete the form block and keep only these links.
+          </p>
+        </div>
+
+        <form class="card" data-aos="fade-left" data-aos-duration="850"
+              action="mailto:akaseb@cougarnet.uh.edu" method="post" enctype="text/plain">
+          <h3>Send a message</h3>
+
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="5" placeholder="What’s up?" required></textarea>
+          </label>
+
+          <button type="submit" class="btn primary">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ahmad Kaseb. All rights reserved.</p>
+      <a href="#home" class="to-top"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0 });
+
+    function hamburg() {
+      const navbar = document.querySelector(".dropdown");
+      navbar.classList.add("open");
+      navbar.setAttribute("aria-hidden", "false");
+    }
+    function cancel() {
+      const navbar = document.querySelector(".dropdown");
+      navbar.classList.remove("open");
+      navbar.setAttribute("aria-hidden", "true");
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
